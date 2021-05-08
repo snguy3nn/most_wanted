@@ -135,6 +135,25 @@ function searchByOccupation(){
     }
 }
 
+function searchByParents(){
+  
+    let parents = document.forms['parentsForm']['parents'].value;
+    let filteredPeople = people.filter(function (person) {
+        if(person.parents === parents){
+            return true;
+        }
+        return false;
+    });
+    
+    if(filteredPeople.length > 0){
+        filteredSearch(filteredPeople);
+    }
+
+    else{
+        alert('No existing parents');
+    }
+}
+
 function filteredSearch(foundPeople){
     let concat = ''
     foundPeople.map(function(el){
