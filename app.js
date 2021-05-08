@@ -42,7 +42,7 @@ function searchByGender(){
 
 function searchByDob(){
   
-    let gender = document.forms['dobForm']['dob'].value;
+    let dob = document.forms['dobForm']['dob'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.dob === dob){
             return true;
@@ -59,6 +59,24 @@ function searchByDob(){
     }
 }
 
+function searchByHeight(){
+  
+    let height = document.forms['heightForm']['height'].value;
+    let filteredPeople = people.filter(function (person) {
+        if(person.height === height){
+            return true;
+        }
+        return false;
+    });
+    
+    if(filteredPeople.length > 0){
+        filteredSearch(filteredPeople);
+    }
+
+    else{
+        alert('No existing height');
+    }
+}
 
 function filteredSearch(foundPeople){
     let concat = ''
