@@ -78,6 +78,25 @@ function searchByHeight(){
     }
 }
 
+function searchByWeight(){
+  
+    let weight = document.forms['weightForm']['weight'].value;
+    let filteredPeople = people.filter(function (person) {
+        if(person.weight === weight){
+            return true;
+        }
+        return false;
+    });
+    
+    if(filteredPeople.length > 0){
+        filteredSearch(filteredPeople);
+    }
+
+    else{
+        alert('No existing weight');
+    }
+}
+
 function filteredSearch(foundPeople){
     let concat = ''
     foundPeople.map(function(el){
