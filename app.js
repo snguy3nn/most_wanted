@@ -21,24 +21,7 @@ function searchByName(){
     
 }
 
-function searchByGender(){
-  
-    let gender = document.forms['genderForm']['gender'].value;
-    let filteredPeople = people.filter(function (person) {
-        if(person.gender === gender){
-            return true;
-        }
-        return false;
-    });
-    
-    if(filteredPeople.length > 0){
-        filteredSearch(filteredPeople);
-    }
 
-    else{
-        alert('Please search for male or female');
-    }
-}
 
 
 
