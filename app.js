@@ -154,6 +154,25 @@ function searchByParents(){
     }
 }
 
+function searchByCurrentSpouse(){
+  
+    let currentSpouse = document.forms['currentSpouseForm']['currentSpouse'].value;
+    let filteredPeople = people.filter(function (person) {
+        if(person.currentSpouse === currentSpouse){
+            return true;
+        }
+        return false;
+    });
+    
+    if(filteredPeople.length > 0){
+        filteredSearch(filteredPeople);
+    }
+
+    else{
+        alert('No existing current spouse');
+    }
+}
+
 function filteredSearch(foundPeople){
     let concat = ''
     foundPeople.map(function(el){
