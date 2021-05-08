@@ -97,7 +97,7 @@ function searchByWeight(){
     }
 }
 
-function searchByWEyeColor(){
+function searchByEyeColor(){
   
     let eyeColor = document.forms['eyeColorForm']['eyeColor'].value;
     let filteredPeople = people.filter(function (person) {
@@ -113,6 +113,25 @@ function searchByWEyeColor(){
 
     else{
         alert('No existing eye color');
+    }
+}
+
+function searchByOccupation(){
+  
+    let occupation = document.forms['occupationForm']['occupation'].value;
+    let filteredPeople = people.filter(function (person) {
+        if(person.occupation === occupation){
+            return true;
+        }
+        return false;
+    });
+    
+    if(filteredPeople.length > 0){
+        filteredSearch(filteredPeople);
+    }
+
+    else{
+        alert('No existing occupation');
     }
 }
 
