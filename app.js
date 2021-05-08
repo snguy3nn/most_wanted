@@ -40,6 +40,24 @@ function searchByGender(){
     }
 }
 
+function searchByDob(){
+  
+    let gender = document.forms['dobForm']['dob'].value;
+    let filteredPeople = people.filter(function (person) {
+        if(person.dob === dob){
+            return true;
+        }
+        return false;
+    });
+    
+    if(filteredPeople.length > 0){
+        filteredSearch(filteredPeople);
+    }
+
+    else{
+        alert('No existing date of birth');
+    }
+}
 
 
 function filteredSearch(foundPeople){
