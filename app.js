@@ -97,6 +97,25 @@ function searchByWeight(){
     }
 }
 
+function searchByWEyeColor(){
+  
+    let eyeColor = document.forms['eyeColorForm']['eyeColor'].value;
+    let filteredPeople = people.filter(function (person) {
+        if(person.eyeColor === eyeColor){
+            return true;
+        }
+        return false;
+    });
+    
+    if(filteredPeople.length > 0){
+        filteredSearch(filteredPeople);
+    }
+
+    else{
+        alert('No existing eye color');
+    }
+}
+
 function filteredSearch(foundPeople){
     let concat = ''
     foundPeople.map(function(el){
