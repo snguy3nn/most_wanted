@@ -2,8 +2,8 @@
 
 function searchByName(){
   
-    let firstNameInput = document.forms['nameForm']['fname'].value;
-    let lastNameInput = document.forms['nameForm']['lname'].value;
+    let firstNameInput = document.forms['dataForm']['fname'].value;
+    let lastNameInput = document.forms['dataForm']['lname'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.firstName === firstNameInput || person.lastName === lastNameInput){
             return true;
@@ -16,14 +16,14 @@ function searchByName(){
     }
     
     else{
-        alert('Sorry, looks like there is no one with that name.');
+        alert('Sorry, looks like is no one with that information.');
     }
     
 }
 
 function searchByGender(){
   
-    let gender = document.forms['genderForm']['gender'].value;
+    let gender = document.forms['dataForm']['gender'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.gender === gender){
             return true;
@@ -34,15 +34,11 @@ function searchByGender(){
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
-
-    else{
-        alert('Please search for male or female');
-    }
 }
 
 function searchByDob(){
   
-    let dob = document.forms['dobForm']['dob'].value;
+    let dob = document.forms['dataForm']['dob'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.dob === dob){
             return true;
@@ -53,17 +49,13 @@ function searchByDob(){
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
-
-    else{
-        alert('No existing date of birth');
-    }
 }
 
 function searchByHeight(){
   
-    let height = document.forms['heightForm']['height'].value;
+    let height = document.forms['dataForm']['height'].value;
     let filteredPeople = people.filter(function (person) {
-        if(person.height === height){
+        if(person.height == height){
             return true;
         }
         return false;
@@ -71,18 +63,14 @@ function searchByHeight(){
     
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
-    }
-
-    else{
-        alert('No existing height');
     }
 }
 
 function searchByWeight(){
   
-    let weight = document.forms['weightForm']['weight'].value;
+    let weight = document.forms['dataForm']['weight'].value;
     let filteredPeople = people.filter(function (person) {
-        if(person.weight === weight){
+        if(person.weight == weight){
             return true;
         }
         return false;
@@ -91,15 +79,11 @@ function searchByWeight(){
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
-
-    else{
-        alert('No existing weight');
-    }
 }
 
 function searchByEyeColor(){
   
-    let eyeColor = document.forms['eyeColorForm']['eyeColor'].value;
+    let eyeColor = document.forms['dataForm']['eyeColor'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.eyeColor === eyeColor){
             return true;
@@ -110,15 +94,11 @@ function searchByEyeColor(){
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
-
-    else{
-        alert('No existing eye color');
-    }
 }
 
 function searchByOccupation(){
   
-    let occupation = document.forms['occupationForm']['occupation'].value;
+    let occupation = document.forms['dataForm']['occupation'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.occupation === occupation){
             return true;
@@ -129,15 +109,11 @@ function searchByOccupation(){
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
-
-    else{
-        alert('No existing occupation');
-    }
 }
 
 function searchByParents(){
   
-    let parents = document.forms['parentsForm']['parents'].value;
+    let parents = document.forms['dataForm']['parents'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.parents === parents){
             return true;
@@ -148,15 +124,11 @@ function searchByParents(){
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
-
-    else{
-        alert('No existing parents');
-    }
 }
 
 function searchByCurrentSpouse(){
   
-    let currentSpouse = document.forms['currentSpouseForm']['currentSpouse'].value;
+    let currentSpouse = document.forms['dataForm']['currentSpouse'].value;
     let filteredPeople = people.filter(function (person) {
         if(person.currentSpouse === currentSpouse){
             return true;
@@ -166,10 +138,6 @@ function searchByCurrentSpouse(){
     
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
-    }
-
-    else{
-        alert('No existing current spouse');
     }
 }
 
