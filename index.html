@@ -6,10 +6,12 @@
   </head>
   <body>
     <form id="dataForm">
+      <label for="id">ID:</label><br />
+      <input type="text" id="id" name="id" value="" /><br />
       <label for="fname">First name:</label><br />
       <input type="text" id="fname" name="fname" value="" /><br />
       <label for="lname">Last name:</label><br />
-      <input type="text" id="lname" name="lname" value="" /><br /><br />
+      <input type="text" id="lname" name="lname" value="" /><br />
       <label for="gender">Gender:</label><br />
       <input type="text" id="gender" name="gender" value="" /><br />
       <label for="dob">DOB:</label><br />
@@ -26,7 +28,7 @@
       <input type="text" id="parents" name="parents" value="" /><br />
       <label for="currentSpouse">Current Spouse:</label><br />
       <input type="text" id="currentSpouse" name="currentSpouse" value="" /><br />
-      <input type="button" onclick="searchByName() || searchByGender() || searchByDob() || searchByHeight () || searchByWeight () || searchByEyeColor () || searchByOccupation () || searchByParents () || searchByCurrentSpouse ()" value="Submit" />
+      <input type="button" onclick="searchByMultiple()" value="Submit" />
     </form>
     <table>
       <table style="width:100%">
