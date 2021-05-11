@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <head>
     <meta charset="utf-8" />
     <title>devCodeCamp &middot; Most Wanted</title>
   </head>
   <body>
+    <div class= "container">
+    <form id="dataForm">
+      
+      <input type="text" id="id" placeholder= "ID" name="id" value="" /><br />
+      <input type="text" id="fname" placeholder= "First Name" name="fname" value="" /><br />
+      <input type="text" id="lname" placeholder= "Last Name" name="lname" value="" /><br />
+      <input type="text" id="gender" placeholder= "Gender" name="gender" value="" /><br />
+      <input type="text" id="dob" placeholder= "Date Of Birth" name="dob" value="" /><br />
+      <input type="text" id="height" placeholder= "Height" name="height" value="" /><br />
+      <input type="text" id="weight" placeholder= "Weight" name="weight" value="" /><br />
+      <input type="text" id="eyeColor" placeholder= "Eye Color" name="eyeColor" value="" /><br />
+      <input type="text" id="occupation" placeholder= "Occupation" name="occupation" value="" /><br />
+      <input type="text" id="parents" placeholder= "Parents" name="parents" value="" /><br />
+      <input type="text" id="currentSpouse" placeholder= "Current Spouse" name="currentSpouse" value="" /><br />
+      <input type="button" onclick="searchByMultiple()" value="Submit" />
+    </form>
+    <style>
+      .content-table{
+        font-family: 'Abel', sans-serif;
+        background-color: rgb(216, 247, 217);
+        padding: 10px;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+}
+  .content-table {
+          margin: 25px;
+          min-width: 400px
+          
+        }
 
-  <form id= 'dataForm'>
-  <label for="id">ID:</label><br />
-  <input type="text" id="id" name="id" value="" /><br />
-  
-  <label for="fname">First name:</label><br />
-  <input type="text" id="fname" name="fname" value="" /><br />
-  
-  <label for="lname">Last name:</label><br />
-  <input type="text" id="lname" name="lname" value="" /><br />
-  
-  <label for="gender">Gender:</label><br />
-  <input type="text" id="gender" name="gender" value="" /><br />
-  
-  <label for="dob">DOB</label><br />
-  <input type="text" id="dob" name="dob" value="" /><br />
-  
-  <label for="height">Height</label><br/>
-  <input type="number" id="height" name="height" value="" /><br />
-  
-  <label for="weight">Weight</label><br />
-  <input type="number" id="weight" name="weight" value="" /><br />
-  
-  <label for="eyeColor">Eye Color</label><br />
-  <input type="text" id="eyeColor" name="eyeColor" value="" /><br />
-  
-  <label for="occupation">Occupation</label><br />
-  <input type="text" id="occupation" name="occupation" value="" /><br />
-  
-  <label for="parents">Parents</label><br />
-  <input type="text" id="parents" name="parents" value="" /><br />
-  
-  <label for="currentSpouse">Current Spouse</label><br />
-  <input type="text" id="currentSpouse" name="currentSpouse" value="" /><br /><br>
-  
-  <input type="button" onclick=" searchByID() || searchByName() || searchByGender() || searchByDOB() || searchByHeight() || searchByWeight() || searchByEyeColor() || searchByOccupation() || searchByParents() || searchByCurrentSpouse()" value="Submit" />
-  </form>
+      .content-table thead tr {
+        background-color: #040404;
+        color: white;
+        text-align: left;
+        font-weight: bold;
+      }
 
+      .content-table th,
+      .content-table td {
+        padding: 12px 15px;
+      }
 
-
-    <table>
-      <table style="width:100%">
-      <thead>
+      .content-table tbody tr {
+        border-bottom: 20px solid #C27225;
+      }
+      
+      .content-table tbody tr:nth-of-type(even) {
+        background-color: #bdc4bb;
+      }
+    </style>
+    <table class= "content-table">
+     <thead>
         <tr>
           <th>ID</th>
           <th>First Name</th>
@@ -67,5 +79,6 @@
 
     <script src="data.js"></script>
     <script src="app.js"></script>
+    <link rel="stylesheet" href="mostwantedtable.css"></link>
   </body>
 </html>
