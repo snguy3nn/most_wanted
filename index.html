@@ -5,29 +5,46 @@
     <title>devCodeCamp &middot; Most Wanted</title>
   </head>
   <body>
-    <form id="dataForm">
-      <label for="fname">First name:</label><br />
-      <input type="text" id="fname" name="fname" value="" /><br />
-      <label for="lname">Last name:</label><br />
-      <input type="text" id="lname" name="lname" value="" /><br /><br />
-      <label for="gender">Gender:</label><br />
-      <input type="text" id="gender" name="gender" value="" /><br />
-      <label for="dob">DOB:</label><br />
-      <input type="text" id="dob" name="dob" value="" /><br />
-      <label for="height">Height:</label><br />
-      <input type="text" id="height" name="height" value="" /><br />
-      <label for="weight">Weight:</label><br />
-      <input type="text" id="weight" name="weight" value="" /><br />
-      <label for="eyeColor">Eye Color:</label><br />
-      <input type="text" id="eyeColor" name="eyeColor" value="" /><br />
-      <label for="occupation">Occupation:</label><br />
-      <input type="text" id="occupation" name="occupation" value="" /><br />
-      <label for="parents">Parents:</label><br />
-      <input type="text" id="parents" name="parents" value="" /><br />
-      <label for="currentSpouse">Current Spouse:</label><br />
-      <input type="text" id="currentSpouse" name="currentSpouse" value="" /><br />
-      <input type="button" onclick="searchByName() || searchByGender() || searchByDob() || searchByHeight () || searchByWeight () || searchByEyeColor () || searchByOccupation () || searchByParents () || searchByCurrentSpouse ()" value="Submit" />
-    </form>
+
+  <form id= 'dataForm'>
+  <label for="id">ID:</label><br />
+  <input type="text" id="id" name="id" value="" /><br />
+  
+  <label for="fname">First name:</label><br />
+  <input type="text" id="fname" name="fname" value="" /><br />
+  
+  <label for="lname">Last name:</label><br />
+  <input type="text" id="lname" name="lname" value="" /><br />
+  
+  <label for="gender">Gender:</label><br />
+  <input type="text" id="gender" name="gender" value="" /><br />
+  
+  <label for="dob">DOB</label><br />
+  <input type="text" id="dob" name="dob" value="" /><br />
+  
+  <label for="height">Height</label><br/>
+  <input type="number" id="height" name="height" value="" /><br />
+  
+  <label for="weight">Weight</label><br />
+  <input type="number" id="weight" name="weight" value="" /><br />
+  
+  <label for="eyeColor">Eye Color</label><br />
+  <input type="text" id="eyeColor" name="eyeColor" value="" /><br />
+  
+  <label for="occupation">Occupation</label><br />
+  <input type="text" id="occupation" name="occupation" value="" /><br />
+  
+  <label for="parents">Parents</label><br />
+  <input type="text" id="parents" name="parents" value="" /><br />
+  
+  <label for="currentSpouse">Current Spouse</label><br />
+  <input type="text" id="currentSpouse" name="currentSpouse" value="" /><br /><br>
+  
+  <input type="button" onclick="searchByName() || searchByGender() || searchByDOB() || searchByHeight() || searchByWeight() || searchByEyeColor() || searchByOccupation() || searchByParents() || searchByCurrentSpouse()" value="Submit" />
+  </form>
+
+
+
     <table>
       <table style="width:100%">
       <thead>
