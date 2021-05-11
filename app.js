@@ -1,14 +1,15 @@
 'use strict';
 
 function searchByID(filterPeople){
-    let idInput = document.forms['dataForm']['fname'].value;
+    let id = document.forms['dataForm']['fname'].value;
     let filteredPeople = filterPeople.filter(function (person) {
-        if(person.id === idInput ){
+        if(person.id === id ){
             return true;
         }
         return false;
-    })
+    });
     return filteredPeople;
+
 }
 function searchByName(filterPeople){
     let firstNameInput = document.forms['dataForm']['fname'].value;
@@ -19,7 +20,7 @@ function searchByName(filterPeople){
         }
         return false;
     })
-    return filteredPeople;
+    return filteredPeople; 
    
 }
 function searchByGender(filterPeople){
@@ -134,7 +135,17 @@ function searchByMultiple(){
     if(document.forms['dataForm']['gender'].value != ''){
         filteredPeople = searchByGender(filteredPeople);
     }
-       
+    if(document.forms['dataForm']['lname'].value != ''){
+        filteredPeople = searchByName(filteredPeople);
+    }
+    if(document.forms['dataForm']['fname'].value != ''){
+        filteredPeople = searchByName(filteredPeople);
+    }
+    if(document.forms['dataForm']['id'].value != ''){
+        filteredPeople = searchByID(filteredPeople);
+    }
+
+}
 function filteredSearch(foundPeople){
     let concat = ""
     foundPeople.map(function(el){
