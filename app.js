@@ -186,5 +186,3 @@ function searchByMultiple(){
     }
 }
 
-
-
