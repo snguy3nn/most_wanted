@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>devCodeCamp &middot; Most Wanted</title>
+    <style>
+      th{
+        text-align:left
+      }
+    </style>
   </head>
   <body>
     <form id="dataForm">
@@ -24,10 +29,6 @@
       <input type="text" id="eyeColor" name="eyeColor" value="" /><br />
       <label for="occupation">Occupation:</label><br />
       <input type="text" id="occupation" name="occupation" value="" /><br />
-      <label for="parents">Parents:</label><br />
-      <input type="text" id="parents" name="parents" value="" /><br />
-      <label for="currentSpouse">Current Spouse:</label><br />
-      <input type="text" id="currentSpouse" name="currentSpouse" value="" /><br />
       <input type="button" onclick="searchByMultiple()" value="Submit" />
     </form>
     <table>
@@ -43,13 +44,22 @@
           <th>Weight</th>
           <th>Eye Color</th>
           <th>Occupation</th>
-          <th>Parents</th>
-          <th>Current Spouse</th>
         </tr>
       </thead>
       <tbody id="people"></tbody>
     </table>
-
+    <table>
+      <table style="width:100%">
+      <thead>
+        <tr>
+          <th>Spouse</th>
+          <th>Descendants</th>
+          <th>Parents</th>
+          <th>Siblings</th>
+        </tr>
+      </thead>
+      <tbody id="familyTree"></tbody>
+    </table>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>

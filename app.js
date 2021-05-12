@@ -1,10 +1,46 @@
 'use strict';
 
+//Appended data table will always show
+people.map(function(el){
+    document.getElementById("people").innerHTML += `<tr>
+    <td>${el.id}</td>
+    <td>${el.firstName}</td>
+    <td>${el.lastName}</td>
+    <td>${el.gender}</td>
+    <td>${el.dob}</td>
+    <td>${el.height}</td>
+    <td>${el.weight}</td>
+    <td>${el.eyeColor}</td>
+    <td>${el.occupation}</td>
+    </tr>`
+})       
+
+//This function will display the filtered results
+function filteredSearch(foundPeople){
+    let concat = ''
+    foundPeople.map(function(el){
+        return concat += `<tr>
+        <td>${el.id}</td>
+        <td>${el.firstName}</td>                                            
+        <td>${el.lastName}</td>
+        <td>${el.gender}</td>
+        <td>${el.dob}</td>
+        <td>${el.height}</td>
+        <td>${el.weight}</td>
+        <td>${el.eyeColor}</td>
+        <td>${el.occupation}</td>
+        </tr>`
+    })      
+    document.getElementById("people").innerHTML = concat
+}
+
+
+//Filtered search functions 
 function searchById(filterPeople){
   
-    let id = document.forms['dataForm']['id'].value;
+    let id = document.forms['dataForm']['id'].value.toLowerCase();
     let filteredPeople = filterPeople.filter(function (person) {
-        if(person.id == id){
+        if(person.id.toLowerCase() == id){
             return true;
         }
         return false;
@@ -12,24 +48,35 @@ function searchById(filterPeople){
     return filteredPeople;
 }
 
-function searchByName(filterPeople){
+function searchByFirstName(filterPeople){
   
-    let firstNameInput = document.forms['dataForm']['fname'].value;
-    let lastNameInput = document.forms['dataForm']['lname'].value;
+    let firstNameInput = document.forms['dataForm']['fname'].value.toLowerCase();
     let filteredPeople = filterPeople.filter(function (person) {
-        if(person.firstName === firstNameInput || person.lastName === lastNameInput){
+        if(person.firstName.toLowerCase() === firstNameInput){
             return true;
         }
-        return false;
+        return false;  
+    });
+    return filteredPeople;
+}
+
+function searchByLastName(filterPeople){
+  
+    let lastNameInput = document.forms['dataForm']['lname'].value.toLowerCase();
+    let filteredPeople = filterPeople.filter(function (person) {
+        if(person.lastName.toLowerCase() === lastNameInput){
+            return true;
+        }
+        return false;  
     });
     return filteredPeople;
 }
 
 function searchByGender(filterPeople){
   
-    let gender = document.forms['dataForm']['gender'].value;
+    let gender = document.forms['dataForm']['gender'].value.toLowerCase();
     let filteredPeople = filterPeople.filter(function (person) {
-        if(person.gender === gender){
+        if(person.gender.toLowerCase() === gender){
             return true;
         }
         return false;
@@ -39,9 +86,9 @@ function searchByGender(filterPeople){
 
 function searchByDob(filterPeople){
   
-    let dob = document.forms['dataForm']['dob'].value;
+    let dob = document.forms['dataForm']['dob'].value.toLowerCase();
     let filteredPeople = filterPeople.filter(function (person) {
-        if(person.dob === dob){
+        if(person.dob.toLowerCase() === dob){
             return true;
         }
         return false;
@@ -75,9 +122,9 @@ function searchByWeight(filterPeople){
 
 function searchByEyeColor(filterPeople){
   
-    let eyeColor = document.forms['dataForm']['eyeColor'].value;
+    let eyeColor = document.forms['dataForm']['eyeColor'].value.toLowerCase();
     let filteredPeople = filterPeople.filter(function (person) {
-        if(person.eyeColor === eyeColor){
+        if(person.eyeColor.toLowerCase() === eyeColor){
             return true;
         }
         return false;
@@ -87,9 +134,9 @@ function searchByEyeColor(filterPeople){
 
 function searchByOccupation(filterPeople){
   
-    let occupation = document.forms['dataForm']['occupation'].value;
+    let occupation = document.forms['dataForm']['occupation'].value.toLowerCase();
     let filteredPeople = filterPeople.filter(function (person) {
-        if(person.occupation === occupation){
+        if(person.occupation.toLowerCase() === occupation){
             return true;
         }
         return false;
@@ -97,61 +144,21 @@ function searchByOccupation(filterPeople){
     return filteredPeople;
 }
 
-function searchByParents(filterPeople){
-  
-    let parents = document.forms['dataForm']['parents'].value;
-    let filteredPeople = filterPeople.filter(function (person) {
-        if(person.parents === parents){
-            return true;
-        }
-        return false;
-    });
-    return filteredPeople;
-}
-
-function searchByCurrentSpouse(filterPeople){
-  
-    let currentSpouse = document.forms['dataForm']['currentSpouse'].value;
-    let filteredPeople = filterPeople.filter(function (person) {
-        if(person.currentSpouse == currentSpouse){
-            return true;
-        }
-        return false;
-    });
-    return filteredPeople;
-}
-
-function filteredSearch(foundPeople){
-    let concat = ''
-    foundPeople.map(function(el){
-        return concat += `<tr>
-        <td>${el.id}</td>
-        <td>${el.firstName}</td>
-        <td>${el.lastName}</td>
-        <td>${el.gender}</td>
-        <td>${el.dob}</td>
-        <td>${el.height}</td>
-        <td>${el.weight}</td>
-        <td>${el.eyeColor}</td>
-        <td>${el.occupation}</td>
-        <td>${el.parents}</td>
-        <td>${el.currentSpouse}</td>
-        </tr>`
-    })      
-    document.getElementById("people").innerHTML = concat
-}
 
 
+
+
+//Multiple search function to narrow down list
 function searchByMultiple(){
     let filteredPeople = people;
     if(document.forms['dataForm']['id'].value != ""){
         filteredPeople = searchById(filteredPeople);
     }
     if(document.forms['dataForm']['fname'].value != ""){
-        filteredPeople= searchByName(filteredPeople);
+        filteredPeople= searchByFirstName(filteredPeople);
     }
     if(document.forms['dataForm']['lname'].value != ""){
-        filteredPeople= searchByName(filteredPeople);
+        filteredPeople= searchByLastName(filteredPeople);
     }
     if(document.forms['dataForm']['gender'].value != ""){
         filteredPeople = searchByGender(filteredPeople);
@@ -171,36 +178,13 @@ function searchByMultiple(){
     if(document.forms['dataForm']['occupation'].value != ""){
         filteredPeople = searchByOccupation(filteredPeople);
     }
-    if(document.forms['dataForm']['parents'].value != ""){
-        filteredPeople = searchByParents(filteredPeople);
-    }
-    if(document.forms['dataForm']['currentSpouse'].value != ""){
-        filteredPeople = searchByCurrentSpouse(filteredPeople);
-    }
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
     else{
         alert('Sorry, there are no matching results')
     }
-    
 }
 
-
-people.map(function(el){
-    document.getElementById("people").innerHTML += `<tr>
-    <td>${el.id}</td>
-    <td>${el.firstName}</td>
-    <td>${el.lastName}</td>
-    <td>${el.gender}</td>
-    <td>${el.dob}</td>
-    <td>${el.height}</td>
-    <td>${el.weight}</td>
-    <td>${el.eyeColor}</td>
-    <td>${el.occupation}</td>
-    <td>${el.parents}</td>
-    <td>${el.currentSpouse}</td>
-    </tr>`
-})       
 
 
