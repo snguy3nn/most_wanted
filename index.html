@@ -3,6 +3,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
   <head>
+   <link rel="stylesheet" href="mostwantedtable.css"></link>
     <meta charset="utf-8" />
     <title>devCodeCamp &middot; Most Wanted</title>
     <style>
@@ -16,20 +17,27 @@
     <form id="dataForm">
       <label for="id">ID:</label><br />
       <input type="text" id="id" name="id" value="" /><br />
+
       <label for="fname">First name:</label><br />
       <input type="text" id="fname" name="fname" value="" /><br />
+
       <label for="lname">Last name:</label><br />
       <input type="text" id="lname" name="lname" value="" /><br />
+
       <label for="gender">Gender:</label><br />
       <input type="text" id="gender" name="gender" value="" /><br />
+
       <label for="dob">DOB:</label><br />
       <input type="text" id="dob" name="dob" value="" /><br />
       <label for="height">Height:</label><br />
       <input type="text" id="height" name="height" value="" /><br />
+
       <label for="weight">Weight:</label><br />
       <input type="text" id="weight" name="weight" value="" /><br />
+
       <label for="eyeColor">Eye Color:</label><br />
       <input type="text" id="eyeColor" name="eyeColor" value="" /><br />
+
       <label for="occupation">Occupation:</label><br />
       <input type="text" id="occupation" name="occupation" value="" /><br />
       <input type="button" onclick="searchByMultiple()" value="Submit" />
@@ -89,7 +97,7 @@
       <table style="width:100%">
       <thead>
         <tr>
-          <th>Spouse</th>
+          <th><a href="#" onClick="searchBySpouse(); return false">Spouse</a></th>
           <th>Descendants</th>
           <th>Parents</th>
           <th>Siblings</th>
@@ -99,6 +107,6 @@
     </table>
     <script src="data.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="mostwantedtable.css"></link>
+   
   </body>
 </html>

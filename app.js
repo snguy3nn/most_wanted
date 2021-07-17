@@ -48,6 +48,8 @@ function searchById(filterPeople){
     return filteredPeople;
 }
 
+
+
 function searchByFirstName(filterPeople){
   
     let firstNameInput = document.forms['dataForm']['fname'].value.toLowerCase();
@@ -144,6 +146,19 @@ function searchByOccupation(filterPeople){
     return filteredPeople;
 }
 
+function findDescendants(filteredPeople){
+    let id = selected.id;
+    let filteredPeople = people.filter(function(person){
+        if(person.parents[0] === id || person.parents[1] === id){
+            person.relation = 'child';
+            findDescendants(person);
+            return true
+        }
+        return false
+    });
+
+
+
 
 
 
@@ -178,6 +193,9 @@ function searchByMultiple(){
     if(document.forms['dataForm']['occupation'].value != ""){
         filteredPeople = searchByOccupation(filteredPeople);
     }
+    if(document.forms['dataForm']['parents'].value != ""){
+        filteredPeople = findDescendants(filteredPeople);
+    }
     if(filteredPeople.length > 0){
         filteredSearch(filteredPeople);
     }
@@ -185,4 +203,3 @@ function searchByMultiple(){
         alert('Sorry, there are no matching results')
     }
 }
-
